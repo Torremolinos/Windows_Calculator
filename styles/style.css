@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  margin: 5px;
+  padding: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.calcu {
+  font-size: smaller;
+  margin: 5px;
+  padding: 5px;
+}
+.contenedor {
+  /*Esto hace que los contenedores hijos no salgan del*/
+  /*cuando metes flex todo se va a quedar dentro y por eso debes meterlo en porcentajes*/
+  display: flex;
+  /*Eso indica el orden que quieres que este las cajas de los hijos.
+    y wrap es que las cajas se van de arriba abajo en orden.*/
+  flex-flow: wrap;
+  width: 445px;
+  height: 780px;
+  background-color: rgb(255, 255, 255);
+}
+.calcuIconos {
+  display: flex;
+  flex-flow: wrap;
+  color: #ffffff;
+  width: 100%;
+  height: 5%;
+  background-color: rgba(19, 19, 19, 0.915);
+}
+.display {
+  display: flex;
+  flex-flow: wrap;
+  /*wrap es que se ordenen de arriba abajo cuando lo aplasta.*/
+  width: 100%;
+  height: 31%;
+}
+.estandar {
+  flex-flow: wrap;
+  color: #ffffff;
+  display: flex;
+  width: 100%;
+  height: 12%;
+  background-color: rgba(19, 19, 19, 0.915);
+}
+.menu {
+  margin: 6px;
+  padding: 5px;
+  width: 15px;
+  height: 15px;
+}
+.estan {
+  font-size: larger;
+  margin: 5px;
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+}
+.historial {
+  color: #b6b4b4;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 17%;
+  background-color: rgba(19, 19, 19, 0.915);
+  padding: 10px;
+}
+.resultado {
+  color: #ffffff;
+  font-size: 70px;
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.915);
+  padding: 10px;
+}
+.cajaBotones {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  width: 100%;
+  height: 64%;
+  background-color: rgb(49, 48, 48);
+}
+.fila {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(48, 48, 48);
+  width: 100%;
+  height: 16.5%;
+}
+.botonOperadores {
+  color: #ffffff;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: 100%;
+  background-color: rgba(49, 49, 49, 0.909);
+}
+/*estoy flipando si usas hover le cambias el color cuando pasas por encima con el ratón*/
+.botonOperadores:hover{
+    background-color: rgba(71, 70, 70, 0.909);
+}
+.botonNumeros {
+  color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: 100%;
+  background-color: rgb(64, 64, 64);
+}
+.botonNumeros:hover{
+    background-color: rgba(49, 49, 49, 0.909);
+}
+.botonResultado {
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: 100%;
+  background-color: rgba(98, 97, 97, 0.887);
+}
+.botonResultado:hover{
+    background-color: rgba(71, 70, 70, 0.909);
+}
