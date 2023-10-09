@@ -1,1 +1,1 @@
-Calculadora Basica lo mas parecida a Windows
+Calculadora Basica lo mas parecida a Windows con la ayuda de chatgpt para JS a fuego.

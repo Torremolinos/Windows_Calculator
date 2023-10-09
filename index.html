@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
+    <link rel="shortcut icon" href="assets/calculadora.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -17,12 +18,12 @@
       <div class="cajaBotones">
         <div class="fila">
             <button class="botonOperadores" id="porcentaje"><i class="fa-solid fa-percent" style="color: #ffffff;"></i></button>
-            <button class="botonOperadores" onclick="borrarDisplay()" id="borradoparcial">CE</button>
-            <button class="botonOperadores" onclick="borrarhistorial()" id="borradototal"><i class="fa-solid fa-c" style="color: #ffffff;"></i></button>
-            <button class="botonOperadores" id="borradouno"><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></button>
+            <button class="botonOperadores" id="pi">π</button>
+            <button class="botonOperadores" id="borradototal"><i class="fa-solid fa-c" style="color: #ffffff;"></i></button>
+            <button class="botonOperadores" id="backtab"><i class="fa-solid fa-delete-left" style="color: #ffffff;"></i></button>
         </div>
         <div class="fila">
-            <button class="botonOperadores" id="pi">π</button>
+            <button class="botonOperadores" id="unox">1/x</button>
             <button class="botonOperadores" id="cuadrado">χ²</button>
             <button class="botonOperadores" id="raizCuadrada"><i class="fa-solid fa-square-root-variable" style="color: #ffffff;"></i></button>
             <button class="botonOperadores" id="dividir"><i class="fa-solid fa-divide" style="color: #ffffff;"></i></button>
@@ -38,19 +39,19 @@
             <button class="botonNumeros" id="button4">4</button>
             <button class="botonNumeros" id="button5">5</button>
             <button class="botonNumeros" id="button6">6</button>
-            <button class="botonOperadores"  onclick="escribir('-')" id="restar"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
+            <button class="botonOperadores" id="restar"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
         </div>
         <div class="fila">
-            <button class="botonNumeros" onclick="escribir('1')" id="button1">1</button>
-            <button class="botonNumeros" onclick="escribir('2')" id="button2">2</button>
-            <button class="botonNumeros" onclick="escribir('3')" id="button3">3</button>
-            <button class="botonOperadores" onclick="escribir('+')" id="sumar"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+            <button class="botonNumeros" id="button1">1</button>
+            <button class="botonNumeros" id="button2">2</button>
+            <button class="botonNumeros" id="button3">3</button>
+            <button class="botonOperadores" id="sumar"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
         </div>
         <div class="fila">
             <button class="botonOperadores" id="masmenos"><i class="fa-solid fa-plus-minus" style="color: #ffffff;"></i></button>
             <button class="botonNumeros" id="button0">0</button>
             <button class="botonOperadores" id="decimal">,</button>
-            <button class="botonResultado" onclick="calcularResultado()" id="igual"><i class="fa-solid fa-grip-lines" style="color: #000000;"></i></button>
+            <button class="botonResultado" id="igual"><i class="fa-solid fa-grip-lines" style="color: #000000;"></i></button>
         </div>
      </div>
       </div>
