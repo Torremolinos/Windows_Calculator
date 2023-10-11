@@ -8,39 +8,27 @@ document.addEventListener("DOMContentLoaded", function () {
  // Variable para controlar si la última entrada fue una operación
 let ultimaFueOperacion = false;
 
-// Función para escribir en el display
+// me parecia interesante esta function tenia otra pero chat gpt la mejoro
 function escribir(valor) {
   const screen = document.getElementById('screen');
-
-  // Si la última entrada fue una operación y el nuevo valor también es una operación, no hagas nada.
   if (ultimaFueOperacion && '+-*/'.includes(valor)) {
     return;
   }
-
-  // Limita el display a un máximo de 9 dígitos
   if (screen.textContent.length < 9) {
-    // Si el valor actual en el display es solo un cero, reemplázalo con el nuevo valor
     if (screen.textContent === '0') {
       screen.textContent = valor;
     } else {
-      // De lo contrario, simplemente agrega el valor al contenido existente
       screen.textContent += valor;
     }
   }
-
-  // Actualiza la variable ultimaFueOperacion
+  // .includes es como un substring, por ejemplo le digo si tiene ese valor enfrente que retorne true. y sino false
   ultimaFueOperacion = '+-*/'.includes(valor);
 }
-  // Función para borrar el contenido del display
   function borrarDisplay() {
     const screen = document.getElementById('screen');
-  
-    // Si el contenido del display es solo un "0", no lo borres.
     if (screen.textContent.length === 1 && screen.textContent === '0') {
       return;
     }
-  
-    // De lo contrario, borra el contenido del display.
     screen.textContent = '0';
   }
 
@@ -48,24 +36,24 @@ function escribir(valor) {
   function calcularResultado() {
     const screen = document.getElementById("screen");
     try {
-      // Utilizamos eval para evaluar la expresión matemática
+      // Utilizamos eval para evaluar la expresión matemática, básicamente mira el simbolo y ejecuta la operacion.
       const resultado = eval(screen.textContent);
       screen.textContent = resultado.toString().substring(0,10);
     } catch (error) {
-      // Manejamos errores si la expresión no es válida
+      // Manejamos errores si la expresión no es válida.
       screen.textContent = "Error";
     }
   }
 
-  // Función para el botón π
+// Función para el botón π
 function pi() {
   const screen = document.getElementById('screen');
-  // Si el valor actual en el display es solo un cero o la última entrada fue una operación,
-  // simplemente muestra el valor de π en el display.
+  /* Si el valor actual en el display es solo un cero o la última entrada fue una operación,
+  simplemente muestra el valor de π en el display.*/
   if (screen.textContent === '0' || ultimaFueOperacion) {
     screen.textContent = Math.PI.toString().substring(0, 10);
   } else {
-    // De lo contrario, multiplica π por el número en el display y limita el resultado a 9 dígitos.
+    /* De lo contrario, multiplica π por el número en el display y limita el resultado a 9 dígitos.*/
     const valorActual = parseFloat(screen.textContent);
     const resultado = (Math.PI * valorActual).toString().substring(0, 10);
     screen.textContent = resultado;
@@ -77,7 +65,7 @@ function masmenos() {
 
   // Si el valor actual en el display es un número negativo, quita el signo negativo para cambiarlo a positivo.
   if (screen.textContent.startsWith('-')) {
-    screen.textContent = screen.textContent.slice(1);
+    screen.textContent = screen.textContent.slice(1); //vi otra manera de hacerlo pero esta funciona asi que no toco na.
   } else {
     // De lo contrario, agrega un signo negativo al número para cambiarlo de positivo a negativo.
     screen.textContent = `-${screen.textContent}`;
@@ -96,7 +84,7 @@ function cuadrado() {
   ultimaFueOperacion = false;
 }
 
-  // Enlazar funciones a los botones utilizando addEventListener
+  // Aqui voy a enlazar los eventos.
   document.getElementById("porcentaje").addEventListener("click", () => escribir("%"));
   document.getElementById("pi").addEventListener("click", () => (pi()));
   document.getElementById("borradototal").addEventListener("click", borrarDisplay);
@@ -107,7 +95,7 @@ function cuadrado() {
 
   document.getElementById("unox").addEventListener("click", () => {
     const screen = document.getElementById("screen");
-    screen.textContent = `1/(${screen.textContent})`;
+    screen.textContent = 1/screen.textContent;
   });
 //ha todos estos metodos los modifico a mano para que no me rompan el Display dado que con el template no lo se controlar
   document.getElementById("cuadrado").addEventListener("click", () => {
@@ -118,7 +106,7 @@ function cuadrado() {
   document.getElementById("raizCuadrada").addEventListener("click", () => {
   const screen = document.getElementById('screen');
   const valorActual = parseFloat(screen.textContent);
-  const resultado = Math.sqrt(valorActual).toString().substring(0, 9);
+  const resultado = Math.sqrt(valorActual).toString().substring(0, 9); //esto es una pajada de chatgpt pero me lo dejaba bien. Entiendo que me lo como string y yo lo recorto hasta 9.
   screen.textContent = resultado;
   });
 
@@ -142,6 +130,3 @@ function cuadrado() {
 });
 
 //});
-//array de 8 para la screen para que cuando llame a la funcion de escribir le meta numero hasta el
-//maximo de la array.
-//para borrar display inner -1 . display inner = ;
